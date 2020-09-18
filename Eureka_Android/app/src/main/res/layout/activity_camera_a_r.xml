@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/camera"
-        android:layout_width="526dp"
-        android:layout_height="716dp"
+        android:layout_width="541dp"
+        android:layout_height="617dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ar_camera" />
@@ -20,6 +20,8 @@
         android:id="@+id/profile_pic"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:clickable="true"
+        android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
