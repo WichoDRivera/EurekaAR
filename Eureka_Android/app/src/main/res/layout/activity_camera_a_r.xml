@@ -7,11 +7,11 @@
     tools:context=".CameraAR">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/camera"
         android:layout_width="526dp"
         android:layout_height="716dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ar_camera" />
@@ -23,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/camera"
         app:srcCompat="@drawable/profile_pic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
