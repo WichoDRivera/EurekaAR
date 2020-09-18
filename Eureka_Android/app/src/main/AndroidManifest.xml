@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogIn"></activity>
         <activity
             android:name=".ui.login.LogIn"
             android:label="@string/title_activity_log_in" />
@@ -17,13 +16,17 @@
         <activity android:name=".SignUp" />
         <activity android:name=".Profile" />
         <activity android:name=".CameraAR" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LogIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
