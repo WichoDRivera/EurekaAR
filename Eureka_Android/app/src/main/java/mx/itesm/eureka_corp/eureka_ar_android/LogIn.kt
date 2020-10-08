@@ -13,10 +13,6 @@ class LogIn : AppCompatActivity() {
     }
 
 
-    fun sign_up(v: View){
-        val sign = Intent(this, SignUp:: class.java)
-        startActivityForResult(sign, 500)
-    }
 
     fun log_in(v: View){
         val login = Intent(this, CameraAR:: class.java)

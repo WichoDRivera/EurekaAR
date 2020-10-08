@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="mx.itesm.eureka_corp.eureka_ar_android">
 
     <application
@@ -16,10 +17,12 @@
         <activity android:name=".SignUp" />
         <activity android:name=".Profile" />
         <activity android:name=".CameraAR" />
-        <activity android:name=".Loading">
+        <activity android:name=".Loading"
+            tools:ignore="ExtraText"
+            android:theme="@style/Splash">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
