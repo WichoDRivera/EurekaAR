@@ -4,28 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBlue"
     tools:context=".CameraAR">
 
     <ImageView
-        android:id="@+id/camera"
-        android:layout_width="541dp"
-        android:layout_height="617dp"
+        android:id="@+id/imageView3"
+        android:layout_width="215dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_logo" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="600dp"
+        android:layout_height="630dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ar_camera" />
 
-    <ImageView
-        android:id="@+id/profile_pic"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:onClick="profile"
+    <androidx.cardview.widget.CardView
+        android:layout_width="391dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/profile_pic"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camera"
-        app:srcCompat="@drawable/profile_pic" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:clickable="true"
+            android:onClick="profile"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/profile_pic" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
