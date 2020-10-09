@@ -21,7 +21,7 @@ class Loading : AppCompatActivity() {
     }
 
     fun main_menu(v: View){
-        val sign = Intent(this, CameraAR:: class.java)
+        val sign = Intent(this, Profile:: class.java)
         startActivityForResult(sign, 500)
     }
 
