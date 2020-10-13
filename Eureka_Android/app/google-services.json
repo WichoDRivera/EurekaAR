@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "253846219744",
+    "firebase_url": "https://eurekaappcorp-d3e60.firebaseio.com",
+    "project_id": "eurekaappcorp-d3e60",
+    "storage_bucket": "eurekaappcorp-d3e60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253846219744:android:3b0e7c98c2c546342e5985",
+        "android_client_info": {
+          "package_name": "mx.itesm.eureka_corp.eureka_ar_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAteshMtSsthqLJ2QIhzfgKqfOVJOKdCTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
