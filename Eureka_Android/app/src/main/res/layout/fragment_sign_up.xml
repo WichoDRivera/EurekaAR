@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="clip_vertical|center_horizontal"
                 android:gravity="center_horizontal|center_vertical"
-                android:onClick="main_menu"
+                android:onClick="createAccountButton"
                 android:text="REGISTRARME"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -98,6 +98,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre" />
@@ -110,9 +111,22 @@
                 android:layout_marginTop="0dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Usuario" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo"
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -123,9 +137,11 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConstraseña"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:inputType="textPassword"
                     android:password="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,9 +152,11 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConfContraseña"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirmar Password"
+                    android:inputType="textPassword"
                     android:password="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
