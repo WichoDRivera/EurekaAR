@@ -12,21 +12,6 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="No tengo una cuenta"
-            android:textAlignment="center"
-            android:textColor="#1497F1"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tvTermsAndCond"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
             android:id="@+id/textView15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,6 +26,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
             android:layout_width="168dp"
             android:layout_height="53dp"
             android:layout_marginTop="24dp"
@@ -149,7 +135,7 @@
             android:id="@+id/tvNoAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
             android:focusable="false"
             android:onClick="signUp"
             android:text="No tengo una cuenta"
@@ -157,10 +143,10 @@
             android:textColor="#1497F1"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tvTermsAndCond"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
         <TextView
             android:id="@+id/tvInstructions"
@@ -180,14 +166,14 @@
             android:id="@+id/tvTermsAndCond"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
             android:text="Términos y condiciones"
             android:textAlignment="center"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoAccount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

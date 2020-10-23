@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "253846219744",
+    "firebase_url": "https://eurekaappcorp-d3e60.firebaseio.com",
+    "project_id": "eurekaappcorp-d3e60",
+    "storage_bucket": "eurekaappcorp-d3e60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253846219744:android:3b0e7c98c2c546342e5985",
+        "android_client_info": {
+          "package_name": "mx.itesm.eureka_corp.eureka_ar_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253846219744-u9m0s8d4noeehrmdkjhjrdtkjbtecbgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.eureka_corp.eureka_ar_android",
+            "certificate_hash": "9a8d57cc53d0a0c181cd6068be009e612c23d50c"
+          }
+        },
+        {
+          "client_id": "253846219744-s2jkig7f4lk0hs6532ai92qc10tt4qkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.eureka_corp.eureka_ar_android",
+            "certificate_hash": "f04cd8c672217dac4407ebc49c1ef57e345e96b3"
+          }
+        },
+        {
+          "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAteshMtSsthqLJ2QIhzfgKqfOVJOKdCTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253846219744:android:e52ced1cfe63180d2e5985",
+        "android_client_info": {
+          "package_name": "mx.itesm.eureka_corp.firebaseeurekamanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253846219744-mn91vd2q8qatt0cuodo6n88g1hdtukuf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.eureka_corp.firebaseeurekamanager",
+            "certificate_hash": "f04cd8c672217dac4407ebc49c1ef57e345e96b3"
+          }
+        },
+        {
+          "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAteshMtSsthqLJ2QIhzfgKqfOVJOKdCTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253846219744-dqid84d29emkfhrkb59etu898nshm838.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
