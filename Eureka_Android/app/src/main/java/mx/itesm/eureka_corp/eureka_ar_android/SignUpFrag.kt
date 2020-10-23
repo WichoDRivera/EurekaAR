@@ -1,6 +1,7 @@
 package mx.itesm.eureka_corp.eureka_ar_android
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
 class SignUpFrag : Fragment() {
     private lateinit var mAuth: FirebaseAuth
-    private var globalContext: Context? = null
+    lateinit var globalContext : Loading
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,13 @@ class SignUpFrag : Fragment() {
 
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if(context is Loading){
+            globalContext = context
+        }
+    }
+
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             println("Usuario: ${currentUser?.displayName}")
@@ -55,11 +64,11 @@ class SignUpFrag : Fragment() {
 
         if(password == confPassword){
             createAccount(email,password)
-            //TO DO: ADD the remaining things to database
-            //       change activity into main menu
+            escribirDatosDB(nombre, usuario, email, password)
+            enterApp()
         }else{
             Toast.makeText(
-                this, "Las contraseñas no coinciden",
+                globalContext, "Las contraseñas no coinciden",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -67,10 +76,22 @@ class SignUpFrag : Fragment() {
 
     }
 
+    private fun enterApp() {
+        val intEnter = Intent(globalContext, Profile::class.java)
+        startActivity(intEnter)
+    }
+
+    private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
+        val usuario = Usuario(nombre, username, email, password)
+        val database = FirebaseDatabase.getInstance()
+        val referencia = database.getReference("/Usuarios/$username")
+        referencia.setValue(usuario)
+    }
+
     fun createAccount(email: String, password: String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(
-                this
+                globalContext
             ) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
@@ -81,7 +102,7 @@ class SignUpFrag : Fragment() {
                         // If sign in fails, display a message to the user.
                         println("createUserWithEmail:failure ${task.exception}")
                         Toast.makeText(
-                            this@EmailPasswordActivity, "Authentication failed.",
+                            globalContext, "Authentication failed.",
                             Toast.LENGTH_SHORT
                         ).show()
                         updateUI(null)

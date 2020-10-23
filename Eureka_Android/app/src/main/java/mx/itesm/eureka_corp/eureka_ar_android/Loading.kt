@@ -18,6 +18,7 @@ class Loading : AppCompatActivity() {
         mlLoading.transitionToStart()
         mlLoading.transitionToEnd()
 
+
     }
 
     fun main_menu(v: View){

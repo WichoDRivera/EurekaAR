@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <fragment
-            android:id="@+id/fragment5"
+            android:id="@+id/fragment"
             android:name="mx.itesm.eureka_corp.eureka_ar_android.StartUpFrag"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
