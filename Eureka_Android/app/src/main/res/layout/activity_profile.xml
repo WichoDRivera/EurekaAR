@@ -19,6 +19,7 @@
         app:srcCompat="@drawable/banner_logo" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
         android:layout_width="0dp"
         android:layout_height="720dp"
         android:layout_marginTop="16dp"

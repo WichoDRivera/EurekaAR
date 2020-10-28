@@ -18,7 +18,10 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_sign_in.*
+import kotlinx.android.synthetic.main.fragment_sign_in.tvAcceder
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
 class StartFrag : Fragment() {
@@ -71,7 +74,6 @@ class StartFrag : Fragment() {
     private fun updateUIGoogle(account: GoogleSignInAccount?) {
         if(account != null){
             println("Login Google")
-            println("Usuario: ${account?.displayName}")
             sendInfoDatabase(account)
             enterApp()
         }else{
@@ -81,7 +83,16 @@ class StartFrag : Fragment() {
     }
 
     private fun sendInfoDatabase(account: GoogleSignInAccount) {
-        println("TO DO")
+        val nombre = account?.displayName.toString()
+        val username = account?.account.toString().split("=", "@")[1]
+        val email = account?.email.toString()
+        val photo_url = account?.photoUrl.toString()
+        println("Usuario: ${username}")
+
+        val usuario = UsuarioGoogle(nombre, username, email, photo_url)
+        val database = FirebaseDatabase.getInstance()
+        val referencia = database.getReference("/Users/$username")
+        referencia.setValue(usuario)
 
     }
 
@@ -168,9 +179,6 @@ class StartFrag : Fragment() {
                     // ...
                 })
     }
-
-
-
 
 
 }
