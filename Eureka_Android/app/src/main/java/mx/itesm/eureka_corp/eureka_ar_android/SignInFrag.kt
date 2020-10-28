@@ -30,6 +30,7 @@ class StartFrag : Fragment() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mAuth: FirebaseAuth
     lateinit var globalContext : Loading
+    lateinit var account: GoogleSignInAccount
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,7 +90,7 @@ class StartFrag : Fragment() {
         val photo_url = account?.photoUrl.toString()
         println("Usuario: ${username}")
 
-        val usuario = UsuarioGoogle(nombre, username, email, photo_url)
+        val usuario = Usuario(nombre, username, email, "", photo_url)
         val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
@@ -121,7 +122,7 @@ class StartFrag : Fragment() {
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(globalContext, gso);
         // Check for existing Google Sign In account, if the user is already signed in the GoogleSignInAccount will be non-null.
-        val account = GoogleSignIn.getLastSignedInAccount(globalContext)
+        account = GoogleSignIn.getLastSignedInAccount(globalContext)!!
         updateUIGoogle(account)
         configurarBtnGoogle()
 
@@ -141,6 +142,7 @@ class StartFrag : Fragment() {
     }
     private fun enterApp() {
         val intEnter = Intent(globalContext, Profile::class.java)
+        intEnter.putExtra("user", account?.account.toString().split("=", "@")[1])
         startActivity(intEnter)
     }
 

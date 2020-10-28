@@ -96,7 +96,7 @@ class SignUpFrag : Fragment() {
     }
 
     private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
-        val usuario = Usuario(nombre, username, email, password)
+        val usuario = Usuario(nombre, username, email, password, "")
         val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)

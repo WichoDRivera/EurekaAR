@@ -75,7 +75,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/tvName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Gabriel Cervantes"
@@ -85,6 +85,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvUser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@gabo_cervantes" />
