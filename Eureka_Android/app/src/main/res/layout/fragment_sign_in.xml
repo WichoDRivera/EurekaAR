@@ -26,24 +26,10 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="Ingresa tus datos:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
         <androidx.cardview.widget.CardView
             android:layout_width="168dp"
             android:layout_height="53dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:foregroundGravity="center_vertical|clip_horizontal"
             app:cardBackgroundColor="@color/mainBlue"
             app:cardCornerRadius="24dp"
@@ -57,7 +43,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="clip_vertical|center_horizontal"
                 android:gravity="center_horizontal|center_vertical"
-                android:onClick="main_menu"
                 android:text="ACCEDER"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -82,11 +67,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
+            android:id="@+id/CVSignInGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             app:cardCornerRadius="24dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +79,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/IVSignInGoogle"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_gravity="clip_horizontal"
@@ -167,20 +152,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:text="Ingresa tus datos:"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+            app:layout_constraintTop_toBottomOf="@+id/CVSignInGoogle" />
 
         <TextView
             android:id="@+id/tvTermsAndCond"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:text="Términos y condiciones"
             android:textAlignment="center"
             android:textSize="16sp"

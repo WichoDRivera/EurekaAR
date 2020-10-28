@@ -37,6 +37,10 @@ class SignUpFrag : Fragment() {
         super.onStart()
         val currentUser = mAuth.currentUser
         updateUI(currentUser)
+        
+        tvAcceder.setOnClickListener {
+            createAccountButton(it)
+        }
 
     }
 
@@ -62,14 +66,24 @@ class SignUpFrag : Fragment() {
         val password = etConstraseña.text.toString()
         val confPassword = etConfContraseña.text.toString()
 
+
+
         if(password == confPassword){
-            createAccount(email,password)
-            escribirDatosDB(nombre, usuario, email, password)
-            enterApp()
+            if(password.length >= 6){
+                createAccount(email,password)
+                escribirDatosDB(nombre, usuario, email, password)
+                enterApp()
+            }else{
+                Toast.makeText(
+                    globalContext, "La contraseña debe de tener al menos 6 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
         }else{
             Toast.makeText(
                 globalContext, "Las contraseñas no coinciden",
-                Toast.LENGTH_SHORT
+                Toast.LENGTH_LONG
             ).show()
         }
 
@@ -84,7 +98,7 @@ class SignUpFrag : Fragment() {
     private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
         val usuario = Usuario(nombre, username, email, password)
         val database = FirebaseDatabase.getInstance()
-        val referencia = database.getReference("/Usuarios/$username")
+        val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
     }
 
