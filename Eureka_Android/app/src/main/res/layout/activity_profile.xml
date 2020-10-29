@@ -280,9 +280,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+                    android:onClick="cameraar"
                     app:cardBackgroundColor="#F09E45"
                     app:cardCornerRadius="25dp"
-                    app:cardUseCompatPadding="true" >
+                    app:cardUseCompatPadding="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
