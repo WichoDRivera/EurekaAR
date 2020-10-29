@@ -10,18 +10,24 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
 class SignUpFrag : Fragment() {
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
     lateinit var globalContext : Loading
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance()
 
     }
 
@@ -66,20 +72,43 @@ class SignUpFrag : Fragment() {
         val password = etConstraseña.text.toString()
         val confPassword = etConfContraseña.text.toString()
 
-
-
         if(password == confPassword){
             if(password.length >= 6){
-                createAccount(email,password)
-                escribirDatosDB(nombre, usuario, email, password)
-                enterApp()
+                val referencia = database.getReference("/Users/$usuario")
+                referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
+                    override fun onCancelled(snapshot: DatabaseError) {
+                        Toast.makeText(
+                            globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        println(snapshot.child("usuario").getValue())
+                        if(snapshot.child("usuario").getValue() == usuario){
+                            Toast.makeText(
+                                globalContext, "El usuario ya esta ocupado, elige otro.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }else if(snapshot.child("email").getValue() == email){
+                            Toast.makeText(
+                                globalContext, "El correo ya esta ocupado, elige otro.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }else{
+                            referencia.setValue(usuario)
+                            createAccount(email,password)
+                            escribirDatosDB(nombre, usuario, email, password)
+                            enterApp()
+                        }
+                    }
+                })
+
             }else{
                 Toast.makeText(
                     globalContext, "La contraseña debe de tener al menos 6 caracteres",
                     Toast.LENGTH_LONG
                 ).show()
             }
-
         }else{
             Toast.makeText(
                 globalContext, "Las contraseñas no coinciden",
@@ -97,7 +126,6 @@ class SignUpFrag : Fragment() {
 
     private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
         val usuario = Usuario(nombre, username, email, password, "")
-        val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
     }
