@@ -31,6 +31,9 @@ class Profile : AppCompatActivity() {
         configurarRecyclerView()
     }
 
+
+
+
     private fun actualizarInformacion(user: String?) {
 
         val baseDatos = FirebaseDatabase.getInstance()
