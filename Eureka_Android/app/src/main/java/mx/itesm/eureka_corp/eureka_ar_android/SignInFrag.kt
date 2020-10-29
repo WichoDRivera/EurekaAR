@@ -18,7 +18,10 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.tvAcceder
 import kotlinx.android.synthetic.main.fragment_sign_up.*
@@ -26,6 +29,7 @@ import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class StartFrag : Fragment() {
 
+    private lateinit var database: FirebaseDatabase
     private val LOGIN_GOOGLE: Int = 500
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mAuth: FirebaseAuth
@@ -35,6 +39,7 @@ class StartFrag : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance()
 
     }
 
@@ -75,8 +80,9 @@ class StartFrag : Fragment() {
     private fun updateUIGoogle(account: GoogleSignInAccount?) {
         if(account != null){
             println("Login Google")
+            println("Hello there!")
             sendInfoDatabase(account)
-            enterApp()
+            enterAppGoogle()
         }else{
             println("No login Google")
         }
@@ -108,39 +114,45 @@ class StartFrag : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        //Auth Eureka
+        // configurar Auth Eureka
         val currentUser = mAuth.currentUser
-        updateUI(currentUser)
         tvAcceder.setOnClickListener {
             SignInButton(it)
         }
 
-        //Auth Google
-        // Configure Google Sign In
+        //configurar Auth Google
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(globalContext, gso);
-        // Check for existing Google Sign In account, if the user is already signed in the GoogleSignInAccount will be non-null.
         account = GoogleSignIn.getLastSignedInAccount(globalContext)!!
-        updateUIGoogle(account)
         configurarBtnGoogle()
 
+        if(currentUser != null) {
+            updateUIGoogle(account)
+        }
     }
 
 
 
-    private fun updateUI(currentUser: FirebaseUser?) {
+    private fun updateUI(currentUser: FirebaseUser?, usuario: String) {
         if(currentUser != null){
             println("Usuario: ${currentUser?.displayName}")
-            enterApp()
+            println("Hello there!")
+            enterApp(usuario)
         }else{
             println("No login")
         }
 
 
     }
-    private fun enterApp() {
+    private fun enterApp(usuario: String) {
+        val intEnter = Intent(globalContext, Profile::class.java)
+        intEnter.putExtra("user", usuario)
+        startActivity(intEnter)
+    }
+
+    private fun enterAppGoogle() {
         val intEnter = Intent(globalContext, Profile::class.java)
         intEnter.putExtra("user", account?.account.toString().split("=", "@")[1])
         startActivity(intEnter)
@@ -154,12 +166,25 @@ class StartFrag : Fragment() {
     }
 
     fun SignInButton(v: View){
-        val email = tdUser.text.toString()
+        val usuario = tdUser.text.toString()
         val password = tePassword.text.toString()
-        SignInFB(email, password)
+        val referencia = database.getReference("/Users/$usuario")
+        referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
+            override fun onCancelled(snapshot: DatabaseError) {
+                Toast.makeText(
+                    globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var email = snapshot.child("email").getValue() as String
+                SignInFB(usuario, email, password)
+            }
+        })
+
     }
 
-    fun SignInFB(email: String, password: String){
+    fun SignInFB(usuario: String, email: String, password: String){
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(globalContext,
                 OnCompleteListener<AuthResult?> { task ->
@@ -167,7 +192,7 @@ class StartFrag : Fragment() {
                         // Sign in success, update UI with the signed-in user's information
                         println("signInWithEmail:success")
                         val user = mAuth.currentUser
-                        updateUI(user)
+                        updateUI(user, usuario)
                     } else {
                         // If sign in fails, display a message to the user.
                         println("signInWithEmail:failure")
@@ -175,7 +200,7 @@ class StartFrag : Fragment() {
                             globalContext, "Authentication failed.",
                             Toast.LENGTH_SHORT
                         ).show()
-                        updateUI(null)
+                        updateUI(null, usuario)
                     }
 
                     // ...
