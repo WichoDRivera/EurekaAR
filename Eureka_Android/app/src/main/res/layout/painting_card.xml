@@ -5,7 +5,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center|center_horizontal|center_vertical"
-    app:cardBackgroundColor="#009688">
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    app:cardBackgroundColor="#009688"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
 
     <ImageView
         android:id="@+id/imgBandera"
