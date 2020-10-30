@@ -34,7 +34,7 @@ class StartFrag : Fragment() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mAuth: FirebaseAuth
     lateinit var globalContext : Loading
-    lateinit var account: GoogleSignInAccount
+    var account: GoogleSignInAccount?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,8 +81,27 @@ class StartFrag : Fragment() {
         if(account != null){
             println("Login Google")
             println("Hello there!")
-            sendInfoDatabase(account)
-            enterAppGoogle()
+            val username = account?.account.toString().split("=", "@")[1]
+            val referencia = database.getReference("/Users/$username")
+            referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
+                override fun onCancelled(snapshot: DatabaseError) {
+                    Toast.makeText(
+                        globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    println(snapshot.child("usuario").getValue())
+                    if(snapshot.child("usuario").getValue() == username){
+                        enterAppGoogle(account)
+                    }else {
+                        sendInfoDatabase(account)
+                        enterAppGoogle(account)
+                    }
+
+
+                }
+            })
         }else{
             println("No login Google")
         }
@@ -125,11 +144,11 @@ class StartFrag : Fragment() {
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(globalContext, gso);
-        account = GoogleSignIn.getLastSignedInAccount(globalContext)!!
+        account = GoogleSignIn.getLastSignedInAccount(globalContext)
         configurarBtnGoogle()
 
-        if(currentUser != null) {
-            updateUIGoogle(account)
+        if(account != null) {
+           updateUIGoogle(account)
         }
     }
 
@@ -152,7 +171,7 @@ class StartFrag : Fragment() {
         startActivity(intEnter)
     }
 
-    private fun enterAppGoogle() {
+    private fun enterAppGoogle(account: GoogleSignInAccount) {
         val intEnter = Intent(globalContext, Profile::class.java)
         intEnter.putExtra("user", account?.account.toString().split("=", "@")[1])
         startActivity(intEnter)

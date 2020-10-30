@@ -94,11 +94,10 @@ class SignUpFrag : Fragment() {
                                 globalContext, "El correo ya esta ocupado, elige otro.",
                                 Toast.LENGTH_LONG
                             ).show()
-                        }else{
-                            referencia.setValue(usuario)
-                            createAccount(email,password)
+                        }else {
                             escribirDatosDB(nombre, usuario, email, password)
-                            enterApp()
+                            createAccount(email, password)
+                            enterApp(usuario)
                         }
                     }
                 })
@@ -119,8 +118,9 @@ class SignUpFrag : Fragment() {
 
     }
 
-    private fun enterApp() {
+    private fun enterApp(usuario: String) {
         val intEnter = Intent(globalContext, Profile::class.java)
+        intEnter.putExtra("user", usuario)
         startActivity(intEnter)
     }
 
