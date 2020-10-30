@@ -18,7 +18,6 @@ class Profile : AppCompatActivity() {
 
     lateinit var arrInfo : MutableList<String>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -30,6 +29,7 @@ class Profile : AppCompatActivity() {
 
         configurarRecyclerView()
     }
+
 
     private fun actualizarInformacion(user: String?) {
 
@@ -45,17 +45,61 @@ class Profile : AppCompatActivity() {
                 arrInfo.clear()
                 for(dato in snapshot.children){
                     val info = dato.getValue()
+                    println(info)
                     arrInfo.add(info as String)
                 }
                 tvName.text = arrInfo[1]
-                tvUser.text = "@" + arrInfo[4]
+                tvUser.text = "@" + arrInfo[3]
 
             }
 
 
         })
 
+        val referencia2 = baseDatos.getReference("/Watched/${user}")
+        referencia2.addListenerForSingleValueEvent(object  : ValueEventListener {
+            override fun onCancelled(snapshot: DatabaseError) {
+                TODO("Not yet implemented")
+                println("jokoj")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    arrInfo.clear()
+                    var count: Int = 0
+                    for(dato in snapshot.children){
+                        val info = dato.getValue()
+                        count +=  info.toString().toInt()
+                        arrInfo.add(info.toString())
+                    }
+
+                    if(count==1){
+                        tvTextoPintura.text = "PINTURA"
+                        tvTextoEscaneada.text = "ESCANEADA"
+                    }else{
+                        tvTextoPintura.text = "PINTURAS"
+                        tvTextoEscaneada.text = "ESCANEADAS"
+                    }
+
+                    if(count == 0){
+                        tvCountPaintings.text = count.toString()
+                    }else if (count<10){
+                        tvCountPaintings.text = "0"+count.toString()
+                    }else{
+                        tvCountPaintings.text = count.toString()
+                    }
+
+
+
+                } else {
+                    val watched = Watched(0,0,0,0,0)
+                    referencia2.setValue(watched)
+
+                }
+            }
+        })
     }
+
 
     fun cameraar(v: View){
         val camera = Intent(this, CameraAR:: class.java)

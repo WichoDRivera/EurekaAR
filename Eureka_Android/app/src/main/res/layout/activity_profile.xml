@@ -78,7 +78,7 @@
                             android:id="@+id/tvName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Gabriel Cervantes"
+                            android:text="Nombre Apellido"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
                             android:textSize="24sp"
@@ -88,7 +88,7 @@
                             android:id="@+id/tvUser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@gabo_cervantes" />
+                            android:text="@usuario" />
                     </LinearLayout>
 
                     <TextView
@@ -140,14 +140,15 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/tvCountPaintings"
                         android:layout_width="109dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="20"
+                        android:layout_marginEnd="8dp"
+                        android:hint="#"
                         android:textAlignment="center"
                         android:textColor="#009688"
-                        android:textSize="80sp"
+                        android:textSize="95sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
@@ -172,25 +173,25 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/textView9"
+                        app:layout_constraintStart_toEndOf="@+id/tvCountPaintings"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="match_parent"
+                            android:id="@+id/tvTextoPintura"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="PINTURAS"
                             android:textAlignment="textStart"
-                            android:textSize="36sp"
+                            android:textSize="40sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/tvTextoEscaneada"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="VISITADOS"
+                            android:text="ESCANEADAS"
                             android:textAlignment="textStart"
-                            android:textSize="24sp"
+                            android:textSize="30sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -280,9 +281,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+                    android:onClick="cameraar"
                     app:cardBackgroundColor="#F09E45"
                     app:cardCornerRadius="25dp"
-                    app:cardUseCompatPadding="true" >
+                    app:cardUseCompatPadding="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
