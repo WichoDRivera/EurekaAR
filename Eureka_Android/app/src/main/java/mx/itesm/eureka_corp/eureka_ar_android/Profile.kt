@@ -104,6 +104,7 @@ class Profile : AppCompatActivity() {
 
     }
 
+
     fun cameraar(v: View){
         val camera = Intent(this, CameraAR:: class.java)
         startActivityForResult(camera, 500)
