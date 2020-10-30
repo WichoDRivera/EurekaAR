@@ -66,11 +66,30 @@ class Profile : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     arrInfo.clear()
+                    var count: Int = 0
                     for(dato in snapshot.children){
                         val info = dato.getValue()
-                        println(info)
+                        count +=  info.toString().toInt()
                         arrInfo.add(info.toString())
                     }
+
+                    if(count==1){
+                        tvTextoPintura.text = "PINTURA"
+                        tvTextoEscaneada.text = "ESCANEADA"
+                    }else{
+                        tvTextoPintura.text = "PINTURAS"
+                        tvTextoEscaneada.text = "ESCANEADAS"
+                    }
+
+                    if(count == 0){
+                        tvCountPaintings.text = count.toString()
+                    }else if (count<10){
+                        tvCountPaintings.text = "0"+count.toString()
+                    }else{
+                        tvCountPaintings.text = count.toString()
+                    }
+
+
 
                 } else {
                     val watched = Watched(0,0,0,0,0)
