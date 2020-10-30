@@ -18,7 +18,6 @@ class Profile : AppCompatActivity() {
 
     lateinit var arrInfo : MutableList<String>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -30,8 +29,6 @@ class Profile : AppCompatActivity() {
 
         configurarRecyclerView()
     }
-
-
 
 
     private fun actualizarInformacion(user: String?) {
@@ -48,10 +45,38 @@ class Profile : AppCompatActivity() {
                 arrInfo.clear()
                 for(dato in snapshot.children){
                     val info = dato.getValue()
+                    println(info)
                     arrInfo.add(info as String)
                 }
                 tvName.text = arrInfo[1]
-                tvUser.text = "@" + arrInfo[4]
+                tvUser.text = "@" + arrInfo[3]
+
+            }
+
+
+        })
+
+        val referencia2 = baseDatos.getReference("/Watched/${user}")
+        referencia2.addListenerForSingleValueEvent(object  : ValueEventListener {
+            override fun onCancelled(snapshot: DatabaseError) {
+                TODO("Not yet implemented")
+                println("jokoj")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    arrInfo.clear()
+                    for(dato in snapshot.children){
+                        val info = dato.getValue()
+                        println(info)
+                        arrInfo.add(info.toString())
+                    }
+
+                } else {
+                    val watched = Watched(0,0,0,0,0)
+                    referencia2.setValue(watched)
+
+                }
 
             }
 
