@@ -96,12 +96,8 @@ class Profile : AppCompatActivity() {
                     referencia2.setValue(watched)
 
                 }
-
             }
-
-
         })
-
     }
 
 
