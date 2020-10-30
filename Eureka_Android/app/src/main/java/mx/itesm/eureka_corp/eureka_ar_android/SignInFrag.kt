@@ -96,10 +96,12 @@ class StartFrag : Fragment() {
         val photo_url = account?.photoUrl.toString()
         println("Usuario: ${username}")
 
-        val usuario = Usuario(nombre, username, email, "", photo_url)
+        val usuario = Usuario(nombre, username, email,  photo_url)
         val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
+
         referencia.setValue(usuario)
+
 
     }
 
@@ -128,12 +130,10 @@ class StartFrag : Fragment() {
         account = GoogleSignIn.getLastSignedInAccount(globalContext)!!
         configurarBtnGoogle()
 
-        if(currentUser != null) {
+        if(account != null) {
             updateUIGoogle(account)
         }
     }
-
-
 
     private fun updateUI(currentUser: FirebaseUser?, usuario: String) {
         if(currentUser != null){
@@ -143,8 +143,6 @@ class StartFrag : Fragment() {
         }else{
             println("No login")
         }
-
-
     }
     private fun enterApp(usuario: String) {
         val intEnter = Intent(globalContext, Profile::class.java)
@@ -206,6 +204,5 @@ class StartFrag : Fragment() {
                     // ...
                 })
     }
-
 
 }

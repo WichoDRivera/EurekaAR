@@ -26,7 +26,7 @@ class SignUpFrag : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
     }
@@ -97,7 +97,7 @@ class SignUpFrag : Fragment() {
                         }else{
                             referencia.setValue(usuario)
                             createAccount(email,password)
-                            escribirDatosDB(nombre, usuario, email, password)
+                            escribirDatosDB(nombre, usuario, email)
                             enterApp()
                         }
                     }
@@ -124,10 +124,17 @@ class SignUpFrag : Fragment() {
         startActivity(intEnter)
     }
 
-    private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
-        val usuario = Usuario(nombre, username, email, password, "")
+    private fun escribirDatosDB(nombre: String, username: String, email: String) {
+        val usuario = Usuario(nombre, username, email,  "")
+
+        // USER
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
+
+        // PAINTING
+        val referencia2 = database.getReference("/Watched/$username")
+        val watched = Watched(0,0,0,0,0)
+        referencia2.setValue(watched)
     }
 
     fun createAccount(email: String, password: String){

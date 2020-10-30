@@ -11,10 +11,4 @@ class CameraAR : AppCompatActivity() {
         setContentView(R.layout.activity_camera_a_r)
     }
 
-
-    fun profile(v: View){
-        val profile = Intent(this, Profile:: class.java)
-        startActivityForResult(profile, 500)
-    }
-
 }
