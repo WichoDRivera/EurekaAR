@@ -26,7 +26,7 @@ class SignUpFrag : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mAuth = FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance()
 
     }
@@ -94,11 +94,10 @@ class SignUpFrag : Fragment() {
                                 globalContext, "El correo ya esta ocupado, elige otro.",
                                 Toast.LENGTH_LONG
                             ).show()
-                        }else{
-                            referencia.setValue(usuario)
-                            createAccount(email,password)
-                            escribirDatosDB(nombre, usuario, email)
-                            enterApp()
+                        }else {
+                            escribirDatosDB(nombre, usuario, email, "")
+                            createAccount(email, password)
+                            enterApp(usuario)
                         }
                     }
                 })
@@ -119,15 +118,16 @@ class SignUpFrag : Fragment() {
 
     }
 
-    private fun enterApp() {
+    private fun enterApp(usuario: String) {
         val intEnter = Intent(globalContext, Profile::class.java)
+        intEnter.putExtra("user", usuario)
         startActivity(intEnter)
     }
 
-    private fun escribirDatosDB(nombre: String, username: String, email: String) {
-        val usuario = Usuario(nombre, username, email,  "")
+    private fun escribirDatosDB(nombre: String, username: String, email: String, photoURL: String) {
+        val usuario = Usuario(nombre, username, email, photoURL)
 
-        // USER
+        //User
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
 
