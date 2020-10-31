@@ -115,10 +115,17 @@ class StartFrag : Fragment() {
         val photo_url = account?.photoUrl.toString()
         println("Usuario: ${username}")
 
-        val usuario = Usuario(nombre, username, email, "", photo_url)
+        val usuario = Usuario(nombre, username, email,  photo_url)
         val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
+
         referencia.setValue(usuario)
+
+        // PAINTING
+        val referencia2 = database.getReference("/Watched/$username")
+        val watched = Watched(0,0,0,0,0)
+        referencia2.setValue(watched)
+
 
     }
 
@@ -152,8 +159,6 @@ class StartFrag : Fragment() {
         }
     }
 
-
-
     private fun updateUI(currentUser: FirebaseUser?, usuario: String) {
         if(currentUser != null){
             println("Usuario: ${currentUser?.displayName}")
@@ -162,8 +167,6 @@ class StartFrag : Fragment() {
         }else{
             println("No login")
         }
-
-
     }
     private fun enterApp(usuario: String) {
         val intEnter = Intent(globalContext, Profile::class.java)
@@ -225,6 +228,5 @@ class StartFrag : Fragment() {
                     // ...
                 })
     }
-
 
 }

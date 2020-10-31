@@ -95,7 +95,7 @@ class SignUpFrag : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                         }else {
-                            escribirDatosDB(nombre, usuario, email, password)
+                            escribirDatosDB(nombre, usuario, email, "")
                             createAccount(email, password)
                             enterApp(usuario)
                         }
@@ -124,10 +124,17 @@ class SignUpFrag : Fragment() {
         startActivity(intEnter)
     }
 
-    private fun escribirDatosDB(nombre: String, username: String, email: String, password: String) {
-        val usuario = Usuario(nombre, username, email, password, "")
+    private fun escribirDatosDB(nombre: String, username: String, email: String, photoURL: String) {
+        val usuario = Usuario(nombre, username, email, photoURL)
+
+        //User
         val referencia = database.getReference("/Users/$username")
         referencia.setValue(usuario)
+
+        // PAINTING
+        val referencia2 = database.getReference("/Watched/$username")
+        val watched = Watched(0,0,0,0,0)
+        referencia2.setValue(watched)
     }
 
     fun createAccount(email: String, password: String){
