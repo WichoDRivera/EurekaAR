@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.painting_card.view.*
 
 //import kotlinx.android.synthetic.main.renglon_bandera.view.*
 
-class ProfileAdaptador(private val arrDatos: Array<Painting>):
+class ProfileAdaptador(private val arrDatos: MutableList<Painting>):
     RecyclerView.Adapter<ProfileAdaptador.VistaRenglon>() {
 
 
