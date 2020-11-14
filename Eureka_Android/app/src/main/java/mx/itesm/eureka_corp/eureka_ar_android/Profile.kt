@@ -169,4 +169,13 @@ class Profile : AppCompatActivity() {
 
     }
 
+    fun changeToMuseum(view: View) {
+
+
+        val intent = Intent(this, Museums2::class.java).apply {
+        }
+        startActivity(intent)
+    }
+
+
 }
