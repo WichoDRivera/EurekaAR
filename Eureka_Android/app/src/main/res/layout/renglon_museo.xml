@@ -30,7 +30,7 @@
             <TextView
                 android:id="@+id/tvDireccion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="68dp"
                 android:layout_weight="1"
                 android:text="Dirección" />
         </LinearLayout>
