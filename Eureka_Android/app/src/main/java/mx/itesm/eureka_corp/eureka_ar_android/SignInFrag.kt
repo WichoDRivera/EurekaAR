@@ -174,6 +174,7 @@ class StartFrag : Fragment() {
     private fun enterApp(usuario: String) {
         val intEnter = Intent(globalContext, Profile::class.java)
         intEnter.putExtra("user", usuario)
+        intEnter.putExtra("type", "Eureka")
         startActivity(intEnter)
     }
 

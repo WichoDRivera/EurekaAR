@@ -6,8 +6,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.fragment_sign_in.*
 
 class Profile : AppCompatActivity() {
     lateinit var arrPaintings: Array<Painting>
@@ -16,6 +22,11 @@ class Profile : AppCompatActivity() {
     lateinit var arr_painting_data : MutableList<String>
     lateinit var painting_meta : MutableList<MutableList<String>>
     lateinit var arr_paintings : MutableList<Painting>
+
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var type: String
+
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
 
 
 
@@ -31,8 +42,38 @@ class Profile : AppCompatActivity() {
         actualizarInformacion(user)
 
         configurarRecyclerView()
+
+        mAuth = FirebaseAuth.getInstance()
+        type = intent.getStringExtra("type").toString()
     }
 
+    override fun onStart() {
+        super.onStart()
+        ivLogOut.setOnClickListener{
+            logOutButton()
+        }
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+    }
+
+    private fun logOutButton() {
+        if(type == "Eureka") {
+            mAuth.signOut()
+            val intent = Intent(this, Loading::class.java).apply {
+            }
+            startActivity(intent)
+        }else{
+            mGoogleSignInClient.signOut()
+            val intent = Intent(this, Loading::class.java).apply {
+            }
+            startActivity(intent)
+        }
+
+    }
 
 
     private fun actualizarInformacion(user: String?) {
