@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_museums2.*
 
 class Museums2 : AppCompatActivity(), ClickListener {
     lateinit var arrMuseo: Array<Museo>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_museums2)
@@ -37,11 +38,30 @@ class Museums2 : AppCompatActivity(), ClickListener {
         }
 
         override fun clicked(position: Int) {
-            println("Hizo click sobre: $position")
-            var museo= arrMuseo[position]
-            val url= Uri.parse("https://es.wikipedia.org/wiki/${museo.nombreMuseo}")
-            val intInfo= Intent(Intent.ACTION_VIEW, url)
-            startActivity(intInfo)
+            when(position){
+                0->{println("Hizo click sobre: $position")
+                    var museo= arrMuseo[position]
+                    val url= Uri.parse("http://museopalaciodebellasartes.gob.mx/")
+                    val intInfo= Intent(Intent.ACTION_VIEW, url)
+                startActivity(intInfo)
+                }
+                1->{println("Hizo click sobre: $position")
+                    var museo= arrMuseo[position]
+                    val url= Uri.parse("https://www.mna.inah.gob.mx/")
+                    val intInfo= Intent(Intent.ACTION_VIEW, url)
+                    startActivity(intInfo)
+
+                }
+                2->{println("Hizo click sobre: $position")
+                    var museo= arrMuseo[position]
+                    val url= Uri.parse("http://www.museosoumaya.org/")
+                    val intInfo= Intent(Intent.ACTION_VIEW, url)
+                    startActivity(intInfo)
+
+                }
+
+            }
+
         }
 
 }
