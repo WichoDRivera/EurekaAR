@@ -3,6 +3,7 @@ package mx.itesm.eureka_corp.eureka_ar_android
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -190,23 +191,44 @@ class StartFrag : Fragment() {
     }
 
     fun SignInButton(v: View){
+
         val usuario = tdUser.text.toString()
         val password = tePassword.text.toString()
-        val referencia = database.getReference("/Users/$usuario")
-        referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
-            override fun onCancelled(snapshot: DatabaseError) {
-                Toast.makeText(
-                    globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var email = snapshot.child("email").getValue() as String
-                SignInFB(usuario, email, password)
-            }
-        })
-
+        if(TextUtils.isEmpty(usuario)){
+            Toast.makeText(
+                globalContext, "Nos has proporcionado un nombre de usuario.",
+                Toast.LENGTH_LONG
+            ).show()
+        }else if(TextUtils.isEmpty(password)){
+            Toast.makeText(
+                globalContext, "Nos has proporcionado una contraseña",
+                Toast.LENGTH_LONG
+            ).show()
+        }else{
+            val referencia = database.getReference("/Users/$usuario")
+            referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
+                override fun onCancelled(snapshot: DatabaseError) {
+                    Toast.makeText(
+                        globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.child("email").getValue() == null){
+                        Toast.makeText(
+                            globalContext, "El usuario es incorrecto. Inténtelo de nuevo",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }else {
+                        var email = snapshot.child("email").getValue() as String
+                        SignInFB(usuario, email, password)
+                    }
+                }
+            })
+        }
     }
+
+
 
     fun SignInFB(usuario: String, email: String, password: String){
         mAuth.signInWithEmailAndPassword(email, password)
@@ -221,7 +243,7 @@ class StartFrag : Fragment() {
                         // If sign in fails, display a message to the user.
                         println("signInWithEmail:failure")
                         Toast.makeText(
-                            globalContext, "Authentication failed.",
+                            globalContext, "La autenticación falló, comprueba que el usuario y contraseña sean correctos.",
                             Toast.LENGTH_SHORT
                         ).show()
                         updateUI(null, usuario)
