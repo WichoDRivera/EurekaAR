@@ -115,10 +115,9 @@ class StartFrag : Fragment() {
         val photo_url = account?.photoUrl.toString()
         println("Usuario: ${username}")
 
-        val usuario = Usuario(nombre, username, email,  photo_url)
         val database = FirebaseDatabase.getInstance()
         val referencia = database.getReference("/Users/$username")
-
+        val usuario = Usuario(nombre, username, email,  photo_url)
         referencia.setValue(usuario)
 
         // PAINTING
@@ -126,7 +125,10 @@ class StartFrag : Fragment() {
         val watched = Watched(0,0,0,0,0)
         referencia2.setValue(watched)
 
-
+        //MAIL
+        val path = email.substringBeforeLast(".") + "_" + email.substringAfterLast(".")
+        val referencia3 = database.getReference("/Email/$path")
+        referencia3.setValue(usuario)
     }
 
     override fun onCreateView(

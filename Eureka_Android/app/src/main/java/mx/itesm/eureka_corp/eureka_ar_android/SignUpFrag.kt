@@ -3,6 +3,7 @@ package mx.itesm.eureka_corp.eureka_ar_android
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,55 +67,116 @@ class SignUpFrag : Fragment() {
     }
 
     fun createAccountButton(v:View){
+        if (checkAllFieldsFilled()){
+            val nombre = etNombre.text.toString()
+            val usuario = etUsuario.text.toString()
+            val email = etCorreo.text.toString()
+            val password = etConstraseña.text.toString()
+            val confPassword = etConfContraseña.text.toString()
+
+            if(password == confPassword){
+                if(password.length >= 6){
+                    val referencia = database.getReference("/Users/$usuario")
+                    referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
+                        override fun onCancelled(snapshot: DatabaseError) {
+                            Toast.makeText(
+                                globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            println(snapshot.child("usuario").getValue())
+                            if(snapshot.child("usuario").getValue() == usuario){
+                                Toast.makeText(
+                                    globalContext, "El usuario ya esta ocupado, elige otro.",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }else{
+                                val path = email.substringBeforeLast(".") + "_" + email.substringAfterLast(".")
+                                val referencia2 = database.getReference("/Email/$path")
+                                referencia2.addListenerForSingleValueEvent(object : ValueEventListener{
+                                    override fun onDataChange(snapshot2: DataSnapshot) {
+                                        if(snapshot2.child("email").getValue() == email){
+                                            Toast.makeText(
+                                                globalContext, "El correo ya está ocupado, elige otro.",
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                        }else {
+                                            escribirDatosDB(nombre, usuario, email, "")
+                                            createAccount(email, password)
+                                            enterApp(usuario)
+                                        }
+                                    }
+
+                                    override fun onCancelled(snapshot2: DatabaseError) {
+                                        Toast.makeText(
+                                            globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
+
+                                })
+                            }
+                        }
+                    })
+
+                }else{
+                    Toast.makeText(
+                        globalContext, "La contraseña debe de tener al menos 6 caracteres",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }else{
+                Toast.makeText(
+                    globalContext, "Las contraseñas no coinciden",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
+
+
+    }
+
+    private fun checkAllFieldsFilled(): Boolean {
         val nombre = etNombre.text.toString()
         val usuario = etUsuario.text.toString()
         val email = etCorreo.text.toString()
         val password = etConstraseña.text.toString()
         val confPassword = etConfContraseña.text.toString()
-
-        if(password == confPassword){
-            if(password.length >= 6){
-                val referencia = database.getReference("/Users/$usuario")
-                referencia.addListenerForSingleValueEvent(object  : ValueEventListener {
-                    override fun onCancelled(snapshot: DatabaseError) {
-                        Toast.makeText(
-                            globalContext, "Error con nuestros servidores. Inténtalo mas tarde.",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        println(snapshot.child("usuario").getValue())
-                        if(snapshot.child("usuario").getValue() == usuario){
-                            Toast.makeText(
-                                globalContext, "El usuario ya esta ocupado, elige otro.",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }else if(snapshot.child("email").getValue() == email){
-                            Toast.makeText(
-                                globalContext, "El correo ya esta ocupado, elige otro.",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }else {
-                            escribirDatosDB(nombre, usuario, email, "")
-                            createAccount(email, password)
-                            enterApp(usuario)
-                        }
-                    }
-                })
-
-            }else{
-                Toast.makeText(
-                    globalContext, "La contraseña debe de tener al menos 6 caracteres",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }else{
+        if (TextUtils.isEmpty(nombre)){
             Toast.makeText(
-                globalContext, "Las contraseñas no coinciden",
+                globalContext, "Debes de proporcionar un nombre.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
+        } else if (TextUtils.isEmpty(usuario)){
+            Toast.makeText(
+                globalContext, "Debes de proporcionar un nombre de usuario.",
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        } else if (TextUtils.isEmpty(email)){
+            Toast.makeText(
+                globalContext, "Debes de proporcionar un correo.",
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        } else if (TextUtils.isEmpty (password) || TextUtils.isEmpty(nombre)){
+            Toast.makeText(
+                globalContext, "Debes de proporcionar una contraseña.",
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }else if (TextUtils.isEmpty (confPassword) || TextUtils.isEmpty(nombre)){
+            Toast.makeText(
+                globalContext, "Es necesario la confirmación de la contraseña.",
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }else{
+            return true
         }
-
 
     }
 
@@ -135,6 +197,11 @@ class SignUpFrag : Fragment() {
         val referencia2 = database.getReference("/Watched/$username")
         val watched = Watched(0,0,0,0,0)
         referencia2.setValue(watched)
+
+        //MAIL
+        val path = email.substringBeforeLast(".") + "_" + email.substringAfterLast(".")
+         val referencia3 = database.getReference("/Email/$path")
+        referencia3.setValue(usuario)
     }
 
     fun createAccount(email: String, password: String){
