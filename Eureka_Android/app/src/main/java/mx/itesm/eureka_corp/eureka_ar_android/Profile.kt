@@ -18,6 +18,7 @@ class Profile : AppCompatActivity() {
     lateinit var arr_paintings : MutableList<Painting>
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -26,7 +27,7 @@ class Profile : AppCompatActivity() {
         arr_painting_data= mutableListOf()
         painting_meta = mutableListOf()
         arr_paintings = mutableListOf()
-        val user = intent.getStringExtra("user")
+        var user = intent.getStringExtra("user")
         actualizarInformacion(user)
 
         configurarRecyclerView()
@@ -170,12 +171,12 @@ class Profile : AppCompatActivity() {
     }
 
     fun changeToMuseum(view: View) {
-
-
         val intent = Intent(this, Museums2::class.java).apply {
         }
         startActivity(intent)
     }
+
+
 
 
 }
