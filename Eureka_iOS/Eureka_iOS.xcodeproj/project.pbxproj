@@ -19,6 +19,11 @@
 		EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */; };
 		EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */; };
 		EABD8FB9256F839200FBABFC /* museo_bellas_artes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */; };
+		38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EFB256F50960024DB16 /* RoundedCornerView.swift */; };
+		38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F12256F5D4C0024DB16 /* museum_logo.png */; };
+		38984F16256F5D640024DB16 /* piramids.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F15256F5D640024DB16 /* piramids.png */; };
+		38984F19256F5F330024DB16 /* swg.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F18256F5F330024DB16 /* swg.png */; };
+		38984F1C256F778F0024DB16 /* priramid_art.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F1B256F778E0024DB16 /* priramid_art.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_de_antroplogia.jpg; sourceTree = "<group>"; };
 		EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_soumaya.jpg; sourceTree = "<group>"; };
 		EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_bellas_artes.jpg; sourceTree = "<group>"; };
+		38984EFB256F50960024DB16 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		38984F12256F5D4C0024DB16 /* museum_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum_logo.png; sourceTree = "<group>"; };
+		38984F15256F5D640024DB16 /* piramids.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piramids.png; sourceTree = "<group>"; };
+		38984F18256F5F330024DB16 /* swg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swg.png; sourceTree = "<group>"; };
+		38984F1B256F778E0024DB16 /* priramid_art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priramid_art.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,10 @@
 				EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */,
 				EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */,
 				EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */,
+				38984F12256F5D4C0024DB16 /* museum_logo.png */,
+				38984F15256F5D640024DB16 /* piramids.png */,
+				38984F1B256F778E0024DB16 /* priramid_art.png */,
+				38984F18256F5F330024DB16 /* swg.png */,
 				38984EE3256F42600024DB16 /* AppDelegate.swift */,
 				38984EE5256F42600024DB16 /* SceneDelegate.swift */,
 				38984EE7256F42600024DB16 /* ViewController.swift */,
@@ -82,6 +96,7 @@
 				38984EF1256F42620024DB16 /* Info.plist */,
 				EABD8FAA256F61BE00FBABFC /* Museos.swift */,
 				EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */,
+				38984EFB256F50960024DB16 /* RoundedCornerView.swift */,
 			);
 			path = Eureka_iOS;
 			sourceTree = "<group>";
@@ -155,8 +170,12 @@
 				38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */,
 				EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */,
 				38984EED256F42620024DB16 /* Assets.xcassets in Resources */,
+				38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */,
+				38984F19256F5F330024DB16 /* swg.png in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
 				EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */,
+				38984F16256F5D640024DB16 /* piramids.png in Resources */,
+				38984F1C256F778F0024DB16 /* priramid_art.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +191,7 @@
 				38984EE4256F42600024DB16 /* AppDelegate.swift in Sources */,
 				38984EE6256F42600024DB16 /* SceneDelegate.swift in Sources */,
 				EABD8FAB256F61BE00FBABFC /* Museos.swift in Sources */,
+				38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
