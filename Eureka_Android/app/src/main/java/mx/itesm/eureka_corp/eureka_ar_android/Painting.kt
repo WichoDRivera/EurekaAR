@@ -1,3 +1,3 @@
 package mx.itesm.eureka_corp.eureka_ar_android
 
-class Painting (val name: String, val technique: String, val artist: String, val year: Int, val idImagen: Int)
+data class Painting (var name: String, var technique: String, var artist: String, var year: Int, var idImagen: Int)

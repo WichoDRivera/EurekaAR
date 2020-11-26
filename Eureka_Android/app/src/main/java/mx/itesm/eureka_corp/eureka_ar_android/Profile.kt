@@ -22,7 +22,7 @@ class Profile : AppCompatActivity() {
     lateinit var arr_painting_data : MutableList<String>
     lateinit var painting_meta : MutableList<MutableList<String>>
     lateinit var arr_paintings : MutableList<Painting>
-
+    lateinit var user: String
     private lateinit var mAuth: FirebaseAuth
     private lateinit var type: String
 
@@ -38,8 +38,7 @@ class Profile : AppCompatActivity() {
         arr_painting_data= mutableListOf()
         painting_meta = mutableListOf()
         arr_paintings = mutableListOf()
-        var user = intent.getStringExtra("user")
-        actualizarInformacion(user)
+        user = intent.getStringExtra("user").toString()
 
         configurarRecyclerView()
 
@@ -57,6 +56,12 @@ class Profile : AppCompatActivity() {
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        arrPaintings = arrayOf()
+        arrInfo.clear()
+        arr_painting_data.clear()
+        painting_meta.clear()
+        arr_paintings.clear()
+        actualizarInformacion()
 
     }
 
@@ -76,7 +81,7 @@ class Profile : AppCompatActivity() {
     }
 
 
-    private fun actualizarInformacion(user: String?) {
+    private fun actualizarInformacion() {
 
         val baseDatos = FirebaseDatabase.getInstance()
         val referencia = baseDatos.getReference("/Users/${user}")
@@ -141,23 +146,24 @@ class Profile : AppCompatActivity() {
 
                         if(arrInfo[i].toInt() == 1){
                             val artist = painting_meta[i][0]
+                            val code = painting_meta[i][1].toInt() -1
                             val name = painting_meta[i][2]
                             val technique = painting_meta[i][3]
                             val year = painting_meta[i][4]
 
-                            if(i == 0){
+                            if(code == 0){
                                 arr_paintings.add(Painting(name, technique, artist, year.toInt(), R.drawable.merry))
 
-                            }else if(i == 1){
+                            }else if(code == 1){
                                 arr_paintings.add(Painting(name, technique, artist, year.toInt(), R.drawable.cena))
 
-                            }else if(i == 2){
+                            }else if(code == 2){
                                 arr_paintings.add(Painting(name, technique, artist, year.toInt(), R.drawable.libertad))
 
-                            }else if(i == 3){
+                            }else if(code == 3){
                                 arr_paintings.add(Painting(name, technique, artist, year.toInt(), R.drawable.adan))
 
-                            }else if(i == 4){
+                            }else if(code == 4){
                                 arr_paintings.add(Painting(name, technique, artist, year.toInt(), R.drawable.piazza))
 
                             }
@@ -183,14 +189,14 @@ class Profile : AppCompatActivity() {
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                arr_painting_data.clear()
-
+                var arr : MutableList<String> = mutableListOf()
                 for(dato in snapshot.children){
-                    val info = dato.getValue()
-                    arr_painting_data.add(info.toString())
+                    var info = dato.getValue()
+                    arr.add(info.toString())
                 }
 
-                painting_meta.add(arr_painting_data)
+                painting_meta.add(arr)
+
             }
         })
     }
@@ -216,8 +222,5 @@ class Profile : AppCompatActivity() {
         }
         startActivity(intent)
     }
-
-
-
 
 }
