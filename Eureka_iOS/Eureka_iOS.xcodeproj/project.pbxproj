@@ -13,6 +13,12 @@
 		38984EEB256F42600024DB16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EE9256F42600024DB16 /* Main.storyboard */; };
 		38984EED256F42620024DB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEC256F42620024DB16 /* Assets.xcassets */; };
 		38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEE256F42620024DB16 /* LaunchScreen.storyboard */; };
+		EABD8FAB256F61BE00FBABFC /* Museos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD8FAA256F61BE00FBABFC /* Museos.swift */; };
+		EABD8FAF256F6E2000FBABFC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABD8FAE256F6E2000FBABFC /* WebKit.framework */; };
+		EABD8FB1256F6F9B00FBABFC /* MuseoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */; };
+		EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */; };
+		EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */; };
+		EABD8FB9256F839200FBABFC /* museo_bellas_artes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		38984EEC256F42620024DB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38984EEF256F42620024DB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38984EF1256F42620024DB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EABD8FAA256F61BE00FBABFC /* Museos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museos.swift; sourceTree = "<group>"; };
+		EABD8FAE256F6E2000FBABFC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseoVC.swift; sourceTree = "<group>"; };
+		EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_de_antroplogia.jpg; sourceTree = "<group>"; };
+		EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_soumaya.jpg; sourceTree = "<group>"; };
+		EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_bellas_artes.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABD8FAF256F6E2000FBABFC /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,7 @@
 			children = (
 				38984EE2256F42600024DB16 /* Eureka_iOS */,
 				38984EE1256F42600024DB16 /* Products */,
+				EABD8FAD256F6E1F00FBABFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +70,9 @@
 		38984EE2256F42600024DB16 /* Eureka_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */,
+				EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */,
+				EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */,
 				38984EE3256F42600024DB16 /* AppDelegate.swift */,
 				38984EE5256F42600024DB16 /* SceneDelegate.swift */,
 				38984EE7256F42600024DB16 /* ViewController.swift */,
@@ -63,8 +80,18 @@
 				38984EEC256F42620024DB16 /* Assets.xcassets */,
 				38984EEE256F42620024DB16 /* LaunchScreen.storyboard */,
 				38984EF1256F42620024DB16 /* Info.plist */,
+				EABD8FAA256F61BE00FBABFC /* Museos.swift */,
+				EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */,
 			);
 			path = Eureka_iOS;
+			sourceTree = "<group>";
+		};
+		EABD8FAD256F6E1F00FBABFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EABD8FAE256F6E2000FBABFC /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +151,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABD8FB9256F839200FBABFC /* museo_bellas_artes.jpg in Resources */,
 				38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */,
+				EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */,
 				38984EED256F42620024DB16 /* Assets.xcassets in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
+				EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				38984EE8256F42600024DB16 /* ViewController.swift in Sources */,
+				EABD8FB1256F6F9B00FBABFC /* MuseoVC.swift in Sources */,
 				38984EE4256F42600024DB16 /* AppDelegate.swift in Sources */,
 				38984EE6256F42600024DB16 /* SceneDelegate.swift in Sources */,
+				EABD8FAB256F61BE00FBABFC /* Museos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
