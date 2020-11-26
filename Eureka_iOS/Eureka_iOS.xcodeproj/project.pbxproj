@@ -7,26 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		388DA854257026F2003A431D /* davinci_medal.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA853257026F2003A431D /* davinci_medal.png */; };
+		388DA85725703B9E003A431D /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85625703B9E003A431D /* rock.png */; };
+		388DA85A25703BC8003A431D /* bottom_rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85925703BC8003A431D /* bottom_rocks.png */; };
+		388DA85D25703DE1003A431D /* log_out_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85C25703DE1003A431D /* log_out_button.png */; };
 		38984EE4256F42600024DB16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE3256F42600024DB16 /* AppDelegate.swift */; };
 		38984EE6256F42600024DB16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE5256F42600024DB16 /* SceneDelegate.swift */; };
 		38984EE8256F42600024DB16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE7256F42600024DB16 /* ViewController.swift */; };
 		38984EEB256F42600024DB16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EE9256F42600024DB16 /* Main.storyboard */; };
 		38984EED256F42620024DB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEC256F42620024DB16 /* Assets.xcassets */; };
 		38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEE256F42620024DB16 /* LaunchScreen.storyboard */; };
+		38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EFB256F50960024DB16 /* RoundedCornerView.swift */; };
+		38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F12256F5D4C0024DB16 /* museum_logo.png */; };
+		38984F16256F5D640024DB16 /* piramids.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F15256F5D640024DB16 /* piramids.png */; };
+		38984F19256F5F330024DB16 /* swg.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F18256F5F330024DB16 /* swg.png */; };
+		38984F1C256F778F0024DB16 /* priramid_art.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F1B256F778E0024DB16 /* priramid_art.png */; };
+		38984F2025701F6F0024DB16 /* banner_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F1F25701F6F0024DB16 /* banner_logo.png */; };
 		EABD8FAB256F61BE00FBABFC /* Museos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD8FAA256F61BE00FBABFC /* Museos.swift */; };
 		EABD8FAF256F6E2000FBABFC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABD8FAE256F6E2000FBABFC /* WebKit.framework */; };
 		EABD8FB1256F6F9B00FBABFC /* MuseoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */; };
 		EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */; };
 		EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */; };
 		EABD8FB9256F839200FBABFC /* museo_bellas_artes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */; };
-		38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EFB256F50960024DB16 /* RoundedCornerView.swift */; };
-		38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F12256F5D4C0024DB16 /* museum_logo.png */; };
-		38984F16256F5D640024DB16 /* piramids.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F15256F5D640024DB16 /* piramids.png */; };
-		38984F19256F5F330024DB16 /* swg.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F18256F5F330024DB16 /* swg.png */; };
-		38984F1C256F778F0024DB16 /* priramid_art.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F1B256F778E0024DB16 /* priramid_art.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		388DA853257026F2003A431D /* davinci_medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = davinci_medal.png; sourceTree = "<group>"; };
+		388DA85625703B9E003A431D /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
+		388DA85925703BC8003A431D /* bottom_rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_rocks.png; sourceTree = "<group>"; };
+		388DA85C25703DE1003A431D /* log_out_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_out_button.png; sourceTree = "<group>"; };
 		38984EE0256F42600024DB16 /* Eureka_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eureka_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38984EE3256F42600024DB16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38984EE5256F42600024DB16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +44,18 @@
 		38984EEC256F42620024DB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38984EEF256F42620024DB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38984EF1256F42620024DB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38984EFB256F50960024DB16 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		38984F12256F5D4C0024DB16 /* museum_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum_logo.png; sourceTree = "<group>"; };
+		38984F15256F5D640024DB16 /* piramids.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piramids.png; sourceTree = "<group>"; };
+		38984F18256F5F330024DB16 /* swg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swg.png; sourceTree = "<group>"; };
+		38984F1B256F778E0024DB16 /* priramid_art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priramid_art.png; sourceTree = "<group>"; };
+		38984F1F25701F6F0024DB16 /* banner_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_logo.png; sourceTree = "<group>"; };
 		EABD8FAA256F61BE00FBABFC /* Museos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museos.swift; sourceTree = "<group>"; };
 		EABD8FAE256F6E2000FBABFC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EABD8FB0256F6F9B00FBABFC /* MuseoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseoVC.swift; sourceTree = "<group>"; };
 		EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_de_antroplogia.jpg; sourceTree = "<group>"; };
 		EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_soumaya.jpg; sourceTree = "<group>"; };
 		EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = museo_bellas_artes.jpg; sourceTree = "<group>"; };
-		38984EFB256F50960024DB16 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
-		38984F12256F5D4C0024DB16 /* museum_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum_logo.png; sourceTree = "<group>"; };
-		38984F15256F5D640024DB16 /* piramids.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piramids.png; sourceTree = "<group>"; };
-		38984F18256F5F330024DB16 /* swg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swg.png; sourceTree = "<group>"; };
-		38984F1B256F778E0024DB16 /* priramid_art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priramid_art.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,11 @@
 		38984EE2256F42600024DB16 /* Eureka_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				388DA85C25703DE1003A431D /* log_out_button.png */,
+				388DA85625703B9E003A431D /* rock.png */,
+				388DA85925703BC8003A431D /* bottom_rocks.png */,
+				38984F1F25701F6F0024DB16 /* banner_logo.png */,
+				388DA853257026F2003A431D /* davinci_medal.png */,
 				EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */,
 				EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */,
 				EABD8FB5256F839200FBABFC /* museo_soumaya.jpg */,
@@ -171,9 +186,14 @@
 				EABD8FB8256F839200FBABFC /* museo_soumaya.jpg in Resources */,
 				38984EED256F42620024DB16 /* Assets.xcassets in Resources */,
 				38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */,
+				38984F2025701F6F0024DB16 /* banner_logo.png in Resources */,
+				388DA85D25703DE1003A431D /* log_out_button.png in Resources */,
 				38984F19256F5F330024DB16 /* swg.png in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
+				388DA854257026F2003A431D /* davinci_medal.png in Resources */,
 				EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */,
+				388DA85725703B9E003A431D /* rock.png in Resources */,
+				388DA85A25703BC8003A431D /* bottom_rocks.png in Resources */,
 				38984F16256F5D640024DB16 /* piramids.png in Resources */,
 				38984F1C256F778F0024DB16 /* priramid_art.png in Resources */,
 			);
