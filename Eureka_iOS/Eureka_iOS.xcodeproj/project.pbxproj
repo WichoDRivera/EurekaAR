@@ -11,6 +11,8 @@
 		388DA85725703B9E003A431D /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85625703B9E003A431D /* rock.png */; };
 		388DA85A25703BC8003A431D /* bottom_rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85925703BC8003A431D /* bottom_rocks.png */; };
 		388DA85D25703DE1003A431D /* log_out_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85C25703DE1003A431D /* log_out_button.png */; };
+		388DA86125704E1E003A431D /* ar_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85F25704E1E003A431D /* ar_button.png */; };
+		388DA86225704E1E003A431D /* museum_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA86025704E1E003A431D /* museum_button.png */; };
 		38984EE4256F42600024DB16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE3256F42600024DB16 /* AppDelegate.swift */; };
 		38984EE6256F42600024DB16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE5256F42600024DB16 /* SceneDelegate.swift */; };
 		38984EE8256F42600024DB16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EE7256F42600024DB16 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 		388DA85625703B9E003A431D /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
 		388DA85925703BC8003A431D /* bottom_rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_rocks.png; sourceTree = "<group>"; };
 		388DA85C25703DE1003A431D /* log_out_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_out_button.png; sourceTree = "<group>"; };
+		388DA85F25704E1E003A431D /* ar_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar_button.png; sourceTree = "<group>"; };
+		388DA86025704E1E003A431D /* museum_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum_button.png; sourceTree = "<group>"; };
 		38984EE0256F42600024DB16 /* Eureka_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eureka_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38984EE3256F42600024DB16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38984EE5256F42600024DB16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				388DA85625703B9E003A431D /* rock.png */,
 				388DA85925703BC8003A431D /* bottom_rocks.png */,
 				38984F1F25701F6F0024DB16 /* banner_logo.png */,
+				388DA85F25704E1E003A431D /* ar_button.png */,
+				388DA86025704E1E003A431D /* museum_button.png */,
 				388DA853257026F2003A431D /* davinci_medal.png */,
 				EABD8FB6256F839200FBABFC /* museo_bellas_artes.jpg */,
 				EABD8FB4256F839200FBABFC /* museo_de_antroplogia.jpg */,
@@ -189,12 +195,14 @@
 				38984F2025701F6F0024DB16 /* banner_logo.png in Resources */,
 				388DA85D25703DE1003A431D /* log_out_button.png in Resources */,
 				38984F19256F5F330024DB16 /* swg.png in Resources */,
+				388DA86225704E1E003A431D /* museum_button.png in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
 				388DA854257026F2003A431D /* davinci_medal.png in Resources */,
 				EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */,
 				388DA85725703B9E003A431D /* rock.png in Resources */,
 				388DA85A25703BC8003A431D /* bottom_rocks.png in Resources */,
 				38984F16256F5D640024DB16 /* piramids.png in Resources */,
+				388DA86125704E1E003A431D /* ar_button.png in Resources */,
 				38984F1C256F778F0024DB16 /* priramid_art.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
