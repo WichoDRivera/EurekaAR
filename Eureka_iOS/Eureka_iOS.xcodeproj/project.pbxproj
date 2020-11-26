@@ -13,6 +13,10 @@
 		38984EEB256F42600024DB16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EE9256F42600024DB16 /* Main.storyboard */; };
 		38984EED256F42620024DB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEC256F42620024DB16 /* Assets.xcassets */; };
 		38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38984EEE256F42620024DB16 /* LaunchScreen.storyboard */; };
+		38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38984EFB256F50960024DB16 /* RoundedCornerView.swift */; };
+		38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F12256F5D4C0024DB16 /* museum_logo.png */; };
+		38984F16256F5D640024DB16 /* piramids.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F15256F5D640024DB16 /* piramids.png */; };
+		38984F19256F5F330024DB16 /* swg.png in Resources */ = {isa = PBXBuildFile; fileRef = 38984F18256F5F330024DB16 /* swg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		38984EEC256F42620024DB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38984EEF256F42620024DB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38984EF1256F42620024DB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38984EFB256F50960024DB16 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		38984F12256F5D4C0024DB16 /* museum_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = museum_logo.png; sourceTree = "<group>"; };
+		38984F15256F5D640024DB16 /* piramids.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piramids.png; sourceTree = "<group>"; };
+		38984F18256F5F330024DB16 /* swg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,9 @@
 		38984EE2256F42600024DB16 /* Eureka_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				38984F12256F5D4C0024DB16 /* museum_logo.png */,
+				38984F15256F5D640024DB16 /* piramids.png */,
+				38984F18256F5F330024DB16 /* swg.png */,
 				38984EE3256F42600024DB16 /* AppDelegate.swift */,
 				38984EE5256F42600024DB16 /* SceneDelegate.swift */,
 				38984EE7256F42600024DB16 /* ViewController.swift */,
@@ -63,6 +74,7 @@
 				38984EEC256F42620024DB16 /* Assets.xcassets */,
 				38984EEE256F42620024DB16 /* LaunchScreen.storyboard */,
 				38984EF1256F42620024DB16 /* Info.plist */,
+				38984EFB256F50960024DB16 /* RoundedCornerView.swift */,
 			);
 			path = Eureka_iOS;
 			sourceTree = "<group>";
@@ -126,7 +138,10 @@
 			files = (
 				38984EF0256F42620024DB16 /* LaunchScreen.storyboard in Resources */,
 				38984EED256F42620024DB16 /* Assets.xcassets in Resources */,
+				38984F13256F5D4D0024DB16 /* museum_logo.png in Resources */,
+				38984F19256F5F330024DB16 /* swg.png in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
+				38984F16256F5D640024DB16 /* piramids.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +155,7 @@
 				38984EE8256F42600024DB16 /* ViewController.swift in Sources */,
 				38984EE4256F42600024DB16 /* AppDelegate.swift in Sources */,
 				38984EE6256F42600024DB16 /* SceneDelegate.swift in Sources */,
+				38984EFC256F50960024DB16 /* RoundedCornerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
