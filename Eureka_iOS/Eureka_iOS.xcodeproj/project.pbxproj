@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38261E492570960C00547A02 /* carrousel.png in Resources */ = {isa = PBXBuildFile; fileRef = 38261E482570960B00547A02 /* carrousel.png */; };
 		388DA854257026F2003A431D /* davinci_medal.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA853257026F2003A431D /* davinci_medal.png */; };
 		388DA85725703B9E003A431D /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85625703B9E003A431D /* rock.png */; };
 		388DA85A25703BC8003A431D /* bottom_rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 388DA85925703BC8003A431D /* bottom_rocks.png */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38261E482570960B00547A02 /* carrousel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrousel.png; sourceTree = "<group>"; };
 		388DA853257026F2003A431D /* davinci_medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = davinci_medal.png; sourceTree = "<group>"; };
 		388DA85625703B9E003A431D /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
 		388DA85925703BC8003A431D /* bottom_rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_rocks.png; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				388DA85C25703DE1003A431D /* log_out_button.png */,
+				38261E482570960B00547A02 /* carrousel.png */,
 				388DA85625703B9E003A431D /* rock.png */,
 				388DA85925703BC8003A431D /* bottom_rocks.png */,
 				38984F1F25701F6F0024DB16 /* banner_logo.png */,
@@ -197,6 +200,7 @@
 				38984F19256F5F330024DB16 /* swg.png in Resources */,
 				388DA86225704E1E003A431D /* museum_button.png in Resources */,
 				38984EEB256F42600024DB16 /* Main.storyboard in Resources */,
+				38261E492570960C00547A02 /* carrousel.png in Resources */,
 				388DA854257026F2003A431D /* davinci_medal.png in Resources */,
 				EABD8FB7256F839200FBABFC /* museo_de_antroplogia.jpg in Resources */,
 				388DA85725703B9E003A431D /* rock.png in Resources */,
