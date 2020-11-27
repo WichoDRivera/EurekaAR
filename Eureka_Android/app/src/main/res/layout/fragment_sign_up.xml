@@ -16,6 +16,7 @@
         android:focusableInTouchMode="false">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="168dp"
             android:layout_height="53dp"
             android:layout_marginTop="16dp"
@@ -44,13 +45,14 @@
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Términos y condiciones"
             android:textAlignment="center"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
         <TextView
             android:id="@+id/textView21"
