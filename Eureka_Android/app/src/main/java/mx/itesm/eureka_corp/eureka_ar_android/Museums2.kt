@@ -33,6 +33,8 @@ class Museums2 : AppCompatActivity(), ClickListener {
     override val info: Any
         get() = TODO("Not yet implemented")
 
+
+
     override fun clicked(position: Int) {
 
             when(position){

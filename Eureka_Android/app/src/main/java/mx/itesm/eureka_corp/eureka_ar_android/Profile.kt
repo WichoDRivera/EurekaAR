@@ -1,6 +1,7 @@
 package mx.itesm.eureka_corp.eureka_ar_android
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -221,5 +222,7 @@ class Profile : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+
 
 }

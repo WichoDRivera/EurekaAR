@@ -2,6 +2,7 @@ package mx.itesm.eureka_corp.eureka_ar_android
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -253,5 +254,7 @@ class StartFrag : Fragment() {
                     // ...
                 })
     }
+
+
 
 }
