@@ -325,6 +325,9 @@
                                                         <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="cdq-Ph-K0j" kind="presentation" id="Obl-oE-Kjh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-SQ-AYo">
                                                 <rect key="frame" x="211" y="22" width="182" height="59"/>
@@ -420,6 +423,175 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Akh-EC-kBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="27.536231884057973" y="279.91071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5qt-oL-LnR">
+            <objects>
+                <viewController id="cdq-Ph-K0j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3m5-21-cyL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-U6-WTx">
+                                <rect key="frame" x="128" y="20" width="158" height="52"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                <color key="textColor" red="0.024490725250000001" green="0.22149404880000001" blue="0.46671313050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" red="0.45882999899999999" green="0.4588118196" blue="0.45882415770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bottom_rocks.png" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-Y6-B60">
+                                <rect key="frame" x="95" y="670" width="319" height="179"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhF-7O-gOz">
+                                <rect key="frame" x="20" y="92" width="374" height="136"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="museo_bellas_artes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QQX-xc-aDl">
+                                        <rect key="frame" x="212" y="0.0" width="167" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QQX-xc-aDl" secondAttribute="height" multiplier="167:136" id="Uit-W9-Iug"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Juárez S/N, Centro Histórico de la Ciudad de México, Cuauhtémoc, 06050, CDMX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUs-vy-xnv">
+                                        <rect key="frame" x="8" y="59" width="204" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.024490725250000001" green="0.22149404880000001" blue="0.46671313050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museo del Palacio de Bellas Artes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26U-bC-CBT">
+                                        <rect key="frame" x="8" y="8" width="204" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29664224389999999" green="0.65355592969999998" blue="0.93340212109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="26U-bC-CBT" firstAttribute="top" secondItem="xhF-7O-gOz" secondAttribute="top" constant="8" id="4j1-ml-Uck"/>
+                                    <constraint firstItem="QQX-xc-aDl" firstAttribute="leading" secondItem="26U-bC-CBT" secondAttribute="trailing" id="7Sh-CI-a2Y"/>
+                                    <constraint firstItem="QQX-xc-aDl" firstAttribute="leading" secondItem="aUs-vy-xnv" secondAttribute="trailing" id="8ra-by-1II"/>
+                                    <constraint firstItem="aUs-vy-xnv" firstAttribute="leading" secondItem="xhF-7O-gOz" secondAttribute="leading" constant="8" id="C84-vw-ozx"/>
+                                    <constraint firstItem="QQX-xc-aDl" firstAttribute="leading" secondItem="26U-bC-CBT" secondAttribute="trailing" id="S0W-jS-2dW"/>
+                                    <constraint firstItem="QQX-xc-aDl" firstAttribute="leading" secondItem="aUs-vy-xnv" secondAttribute="trailing" id="TYg-ad-tPK"/>
+                                    <constraint firstItem="aUs-vy-xnv" firstAttribute="top" secondItem="26U-bC-CBT" secondAttribute="bottom" constant="8" id="WGq-kd-peX"/>
+                                    <constraint firstItem="QQX-xc-aDl" firstAttribute="top" secondItem="xhF-7O-gOz" secondAttribute="top" id="nPB-hN-Meg"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQX-xc-aDl" secondAttribute="trailing" constant="-5" id="nWy-6M-oY4"/>
+                                    <constraint firstAttribute="bottom" secondItem="QQX-xc-aDl" secondAttribute="bottom" id="oq8-8p-Dn5"/>
+                                    <constraint firstItem="26U-bC-CBT" firstAttribute="leading" secondItem="xhF-7O-gOz" secondAttribute="leading" constant="8" id="zap-E1-yxw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4n-uX-gWm">
+                                <rect key="frame" x="20" y="248" width="374" height="136"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="museo_de_antroplogia.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-6p-02c">
+                                        <rect key="frame" x="212" y="0.0" width="167" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rmm-6p-02c" secondAttribute="height" multiplier="167:136" id="Ps6-7p-i6H"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museo Nacional de Antropología" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-1a-ClF">
+                                        <rect key="frame" x="8" y="8" width="204" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Paseo de la Reforma s/n Polanco, Bosque de Chapultepec I Secc. Miguel Hidalgo, 11560 CDMX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz9-vA-83t">
+                                        <rect key="frame" x="8" y="59" width="204" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.024490725250000001" green="0.22149404880000001" blue="0.46671313050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29664224389999999" green="0.65355592969999998" blue="0.93340212109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rmm-6p-02c" secondAttribute="trailing" constant="-5" id="0af-RC-ZpA"/>
+                                    <constraint firstItem="G3q-1a-ClF" firstAttribute="leading" secondItem="W4n-uX-gWm" secondAttribute="leading" constant="8" id="1lF-9n-q2Z"/>
+                                    <constraint firstItem="rmm-6p-02c" firstAttribute="leading" secondItem="G3q-1a-ClF" secondAttribute="trailing" id="3ES-ku-aEH"/>
+                                    <constraint firstItem="rmm-6p-02c" firstAttribute="top" secondItem="W4n-uX-gWm" secondAttribute="top" id="4It-VG-yfm"/>
+                                    <constraint firstItem="G3q-1a-ClF" firstAttribute="top" secondItem="W4n-uX-gWm" secondAttribute="top" constant="8" id="91M-Mh-mNJ"/>
+                                    <constraint firstItem="rmm-6p-02c" firstAttribute="leading" secondItem="Jz9-vA-83t" secondAttribute="trailing" id="Bae-wz-tZT"/>
+                                    <constraint firstItem="Jz9-vA-83t" firstAttribute="top" secondItem="G3q-1a-ClF" secondAttribute="bottom" constant="8" id="Kmd-Ad-sOk"/>
+                                    <constraint firstItem="rmm-6p-02c" firstAttribute="leading" secondItem="G3q-1a-ClF" secondAttribute="trailing" id="Omc-RT-nof"/>
+                                    <constraint firstItem="Jz9-vA-83t" firstAttribute="leading" secondItem="W4n-uX-gWm" secondAttribute="leading" constant="8" id="UmM-vl-18L"/>
+                                    <constraint firstItem="rmm-6p-02c" firstAttribute="leading" secondItem="Jz9-vA-83t" secondAttribute="trailing" id="aeG-2l-J3m"/>
+                                    <constraint firstAttribute="bottom" secondItem="rmm-6p-02c" secondAttribute="bottom" id="jB3-qZ-RAc"/>
+                                    <constraint firstItem="G3q-1a-ClF" firstAttribute="leading" secondItem="W4n-uX-gWm" secondAttribute="leading" constant="8" id="uTE-Gw-Lc7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT4-l6-n3i">
+                                <rect key="frame" x="20" y="404" width="374" height="136"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="museo_soumaya.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZSr-4h-Clb">
+                                        <rect key="frame" x="209" y="0.0" width="170" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZSr-4h-Clb" secondAttribute="height" multiplier="5:4" id="cmC-vo-Wsm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Museo Soumaya" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnS-VF-3IS">
+                                        <rect key="frame" x="8" y="8" width="201" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Paseo de la Reforma s/n Polanco, Bosque de Chapultepec I Secc. Miguel Hidalgo, 11560 CDMX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYD-ft-EhZ">
+                                        <rect key="frame" x="8" y="37.5" width="201" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.024490725250000001" green="0.22149404880000001" blue="0.46671313050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29664224389999999" green="0.65355592969999998" blue="0.93340212109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="dnS-VF-3IS" firstAttribute="top" secondItem="sT4-l6-n3i" secondAttribute="top" constant="8" id="6O8-k7-1dq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZSr-4h-Clb" secondAttribute="trailing" constant="-5" id="DYn-a3-hBM"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZSr-4h-Clb" secondAttribute="bottom" id="VwI-Zm-JnL"/>
+                                    <constraint firstItem="dnS-VF-3IS" firstAttribute="leading" secondItem="sT4-l6-n3i" secondAttribute="leading" constant="8" id="Y8U-PH-2zI"/>
+                                    <constraint firstItem="XYD-ft-EhZ" firstAttribute="leading" secondItem="sT4-l6-n3i" secondAttribute="leading" constant="8" id="hqe-8o-Xla"/>
+                                    <constraint firstItem="XYD-ft-EhZ" firstAttribute="top" secondItem="dnS-VF-3IS" secondAttribute="bottom" constant="8" id="jde-1N-PbJ"/>
+                                    <constraint firstItem="ZSr-4h-Clb" firstAttribute="leading" secondItem="dnS-VF-3IS" secondAttribute="trailing" id="m4D-8g-8Y1"/>
+                                    <constraint firstItem="ZSr-4h-Clb" firstAttribute="top" secondItem="sT4-l6-n3i" secondAttribute="top" id="mrb-Df-HUg"/>
+                                    <constraint firstItem="ZSr-4h-Clb" firstAttribute="leading" secondItem="XYD-ft-EhZ" secondAttribute="trailing" id="oem-aX-m5v"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hDm-A1-0q9"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W4n-uX-gWm" firstAttribute="leading" secondItem="hDm-A1-0q9" secondAttribute="leading" constant="20" id="2q0-Kb-tU4"/>
+                            <constraint firstItem="sT4-l6-n3i" firstAttribute="width" secondItem="sT4-l6-n3i" secondAttribute="height" multiplier="11:4" id="6Lm-6H-HdL"/>
+                            <constraint firstItem="mQJ-U6-WTx" firstAttribute="top" secondItem="hDm-A1-0q9" secondAttribute="top" constant="20" id="7sC-Dm-FAM"/>
+                            <constraint firstItem="sT4-l6-n3i" firstAttribute="leading" secondItem="hDm-A1-0q9" secondAttribute="leading" constant="20" id="MWI-If-URF"/>
+                            <constraint firstItem="xhF-7O-gOz" firstAttribute="top" secondItem="mQJ-U6-WTx" secondAttribute="bottom" constant="20" id="PQh-yp-mhr"/>
+                            <constraint firstItem="hDm-A1-0q9" firstAttribute="trailing" secondItem="sT4-l6-n3i" secondAttribute="trailing" constant="20" id="TSo-BF-1ir"/>
+                            <constraint firstItem="sT4-l6-n3i" firstAttribute="top" secondItem="W4n-uX-gWm" secondAttribute="bottom" constant="20" id="YPf-tH-Jch"/>
+                            <constraint firstItem="W4n-uX-gWm" firstAttribute="width" secondItem="W4n-uX-gWm" secondAttribute="height" multiplier="11:4" id="hvv-rg-ftZ"/>
+                            <constraint firstItem="xhF-7O-gOz" firstAttribute="width" secondItem="xhF-7O-gOz" secondAttribute="height" multiplier="11:4" id="lmG-VA-7BT"/>
+                            <constraint firstItem="hDm-A1-0q9" firstAttribute="trailing" secondItem="W4n-uX-gWm" secondAttribute="trailing" constant="20" id="m5y-O1-xhc"/>
+                            <constraint firstItem="hDm-A1-0q9" firstAttribute="trailing" secondItem="xhF-7O-gOz" secondAttribute="trailing" constant="20" id="n9p-JR-5Tg"/>
+                            <constraint firstItem="xhF-7O-gOz" firstAttribute="leading" secondItem="hDm-A1-0q9" secondAttribute="leading" constant="20" id="nH3-Xm-YsB"/>
+                            <constraint firstItem="mQJ-U6-WTx" firstAttribute="leading" secondItem="hDm-A1-0q9" secondAttribute="leading" constant="128" id="rDi-hN-LAC"/>
+                            <constraint firstItem="hDm-A1-0q9" firstAttribute="trailing" secondItem="mQJ-U6-WTx" secondAttribute="trailing" constant="128" id="vuf-qD-vAU"/>
+                            <constraint firstItem="W4n-uX-gWm" firstAttribute="top" secondItem="xhF-7O-gOz" secondAttribute="bottom" constant="20" id="x2Z-wT-tv2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6XD-6b-yPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.89855072463774" y="62.946428571428569"/>
         </scene>
         <!--Museos-->
         <scene sceneID="dHb-Wg-wwy">
@@ -759,7 +931,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oHZ-mt-ucd"/>
-        <segue reference="79M-AU-C4X"/>
+        <segue reference="7Gb-wB-iIT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ar_button.png" width="264" height="249"/>
@@ -768,6 +940,9 @@
         <image name="carrousel.png" width="335" height="169"/>
         <image name="davinci_medal.png" width="431.5" height="427.5"/>
         <image name="log_out_button.png" width="244" height="275"/>
+        <image name="museo_bellas_artes.jpg" width="881" height="720"/>
+        <image name="museo_de_antroplogia.jpg" width="881" height="720"/>
+        <image name="museo_soumaya.jpg" width="881" height="720"/>
         <image name="museum_button.png" width="264" height="246"/>
         <image name="museum_logo.png" width="101" height="78"/>
         <image name="priramid_art.png" width="1142" height="172"/>
