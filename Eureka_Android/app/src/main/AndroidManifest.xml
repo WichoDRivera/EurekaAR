@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mx.itesm.eureka_corp.eureka_ar_android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.any"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +26,11 @@
             android:label="@string/title_activity_log_in" />
         <activity android:name=".SignUp" />
         <activity android:name=".Profile" />
-        <activity android:name=".CameraAR" />
+        <activity android:name=".CameraAR">
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label"/>
+        </activity>
         <activity
             android:name=".Loading"
             android:theme="@style/Splash"
@@ -30,6 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".videoLoader"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
