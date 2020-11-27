@@ -80,7 +80,6 @@ class Profile : AppCompatActivity() {
 
     }
 
-
     private fun actualizarInformacion() {
 
         val baseDatos = FirebaseDatabase.getInstance()
