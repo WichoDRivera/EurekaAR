@@ -223,6 +223,12 @@ class Profile : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun changeToInfo(view: View) {
+        val intent = Intent(this, AcercaDe::class.java).apply {
+        }
+        startActivity(intent)
+    }
+
 
 
 }
